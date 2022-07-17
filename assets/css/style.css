@@ -1,0 +1,224 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+.col{
+    background-clip: content-box;
+}
+ul{
+    list-style: none;
+}
+
+html
+{
+    scroll-behavior: smooth;
+    font-family: Helvetica, Arial, sans-serif;
+}
+body{
+    height: 1600px;
+}
+.layout-item{
+    background-color: #fff;
+    text-align: center;
+    border-radius: 25px;
+    min-height: 280px;
+    box-shadow: 0 0 0 1px rgba(186, 186, 186, 0.3);
+
+}
+.layout-icons{
+    --height: 72px;
+    border: 8px solid #0078ff;
+    border-radius: 100%;
+    height: var(--height);
+    width: var(--height);
+    padding: 12px;
+    margin: 48px 0;
+    display: inline-block;
+    font-size: 36px;
+    position: relative;
+}
+.circle-icon{
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 50%;
+    transform: translateY(-50%);
+
+}
+.layout-icons:hover{
+    background-color:#0078ff;
+    border: 8px solid #75acec;
+    color: #fff;
+    cursor: pointer;
+}
+
+#header{
+    height: 46px;
+    background-color: black;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 99999999;
+
+}
+.logo{
+    font-size: 28px;
+    margin-left: 28px;
+}
+
+#nav{
+    display: flex;
+    justify-content: space-between;
+}
+#nav_link-container{ 
+    margin-right: 28px;
+    display: flex;
+  
+}
+.nav-link{
+    font-size: 16px;
+    color: #fff;
+    line-height: 46px;
+    
+}
+#nav li{
+    list-style-type: none;
+    margin-left:28px;
+}
+#nav a{
+    list-style: none;
+    text-decoration: none;
+}
+#nav>li>a 
+{
+    line-height: 46px;
+    /* text-transform: uppercase; */
+    color: #fff;
+}
+#opening{
+    margin-top: 46px;
+    position: relative; 
+}
+.opening_img{
+    filter:brightness(25%);
+    background: url("../img/homelander.jpg") top center / cover no-repeat;
+    width: 100%;
+    height:100vh;
+ 
+}
+.title{
+    color: #fff;
+    position: absolute;
+    width: 100%;
+    top: calc( 50% - 72px);
+}
+#about-section{
+    padding-top: 64px;
+    padding-bottom: 48px;
+    min-height: 280px;
+    background-color:  #f5f5f5;
+    
+}
+.about-container{
+    background-color: #fff;
+    width: 100%; 
+    min-height: 280px;
+    border-radius: 20px;
+    box-shadow: 2px 2px 2px #0078ff;
+}
+.about_me-title{
+    color: black;
+}
+.about-skill{
+    margin-top: 48px;
+    padding-left: 40px;
+}
+
+.avatar-des{
+    font-size: 16px;
+}
+p + p{
+    margin-top: 8px;
+}
+.skill{
+    margin-top: 64px;
+
+}
+.about-me{
+    padding-top: 64px;
+    font-size: 20px;
+    padding-bottom: 48px;
+    
+}
+.content{
+    text-indent: 28px;
+    color: rgb(108, 105, 105);
+}
+
+#services-section{
+    background-color:#f5f5f5;
+    min-height: 280px;
+}
+
+.experience{
+    margin-top: 64px;
+    position: relative;
+   
+}
+
+.ex-image{
+    background-image: url("./assets/img/theboys.jpg");
+    min-height: 280px;
+    width: 100%;
+}
+.overlay{
+    background-color: #0078ff;
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    opacity: 0.7;
+}
+.ex-container{
+    top: 60%;
+    transform: translateY(-50%);
+    position: absolute;
+
+}
+.experience-items{
+    text-align: center;
+    opacity: 1;
+    min-height: 280px;
+    justify-items: center;
+    color: #fff;
+}
+/* Work Section */
+.work-section{
+    padding-top: 64px;
+    min-height: 280px;
+    background-color: #f5f5f5;
+}
+.work-item{
+    border-radius: none;
+    box-shadow: none;
+}
+.work-img{
+    width: 100%;
+    height: auto;
+}
+.work-content{
+    margin: 16px 0;
+    padding: 0 16px;
+    color: #1E1E1E;
+}
+.w-desc{
+    display: flex;
+}
+.over{
+    display: flex;
+    justify-content:center;
+    flex-direction: column;
+}
