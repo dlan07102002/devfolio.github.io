@@ -1,0 +1,11 @@
+@media (max-width: 1023px) {
+    .avatar-img{
+        width: 100%;
+    }
+    .about-skill{
+        padding: 0 20px;
+    }
+    p.content {
+        padding: 0 20px;
+    }
+}

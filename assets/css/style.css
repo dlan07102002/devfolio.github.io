@@ -13,17 +13,25 @@ ul{
 html
 {
     scroll-behavior: smooth;
-    font-family: Helvetica, Arial, sans-serif;
+    font-family: system-ui,"Segoe UI","Helvetica Neue",Arial,"Noto Sans","Liberation Sans",sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol","Noto Color Emoji"
 }
 body{
     height: 1600px;
+    background-color: #f5f5f5;
+    max-width: 100vw;
+}
+.big-title{
+    text-transform: uppercase;
+    font-size: 48px;
+    font-weight: 600;
+    text-align: center;
 }
 .layout-item{
     background-color: #fff;
     text-align: center;
-    border-radius: 25px;
+    border-radius: 1px;
     min-height: 280px;
-    box-shadow: 0 0 0 1px rgba(186, 186, 186, 0.3);
+    box-shadow: 0 0px 1px 0 rgb(0 0 0 / 6%), 0 2px 5px 0 rgb(0 0 0 / 20%)
 
 }
 .layout-icons{
@@ -40,10 +48,9 @@ body{
 }
 .circle-icon{
     position: absolute;
-    left: 0;
-    right: 0;
+    left: 50%;
     top: 50%;
-    transform: translateY(-50%);
+    transform: translate(-50%,-50%);
 
 }
 .layout-icons:hover{
@@ -52,9 +59,15 @@ body{
     color: #fff;
     cursor: pointer;
 }
-
+.underline{
+    background-color: #0078ff;
+    margin: auto;
+    width: 40px;
+    height: 5px;
+    margin-top: 16px;
+}
 #header{
-    height: 46px;
+    height: 66px;
     background-color: black;
     position: fixed;
     top: 0;
@@ -63,39 +76,127 @@ body{
     z-index: 99999999;
 
 }
-.logo{
-    font-size: 28px;
-    margin-left: 28px;
-}
-
-#nav{
+.nav__pc{
     display: flex;
     justify-content: space-between;
 }
-#nav_link-container{ 
-    margin-right: 28px;
+.nav {
     display: flex;
-  
+    align-items: center;
+    height: 48px;
+    background-color: #333;
+    width: 100%;
 }
-.nav-link{
-    font-size: 16px;
+
+.nav__list {
+    display: flex;
+    list-style: none;
+    line-height: 66px;
+    text-transform: uppercase;
+}
+.web-title{
+    line-height: 66px;
+    margin-left: 112px;
     color: #fff;
-    line-height: 46px;
+    font-size: 28px;
+    font-weight: 600;
+}
+.nav__link {
+    text-decoration: none;
+    color: #fff;
+    margin-right: 48px;
+    font-size: 16px;
+    font-weight: 600;
+}
+
+.nav__bar-btn{
+    display: none;
+    margin-left: 8px;
+    padding-top: 12px;
+    width: 36px;
+    height: 36px;
+    display: none;
+    margin-left: 8px;
+}
+.nav__overlay{
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background-color: rgba(0,0,0,0.3);
+    display: none;
+    animation: fadeIn linear 0.2s;
+}
+
+.nav__mobile {
+    position: fixed;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    width: 320px;
+    max-width: 100%;
+    background-color: #fff;
+    transform: translateX(-100%);
+    z-index: 999999999;
     
 }
-#nav li{
-    list-style-type: none;
-    margin-left:28px;
+
+.nav__mobile-list{
+    margin-top: 24px;
 }
-#nav a{
-    list-style: none;
+.nav__mobile-link{
     text-decoration: none;
+    color: #333;
+    display: block;
+    padding: 8px 0;
+    font-size: 1.4rem;
 }
-#nav>li>a 
-{
-    line-height: 46px;
-    /* text-transform: uppercase; */
-    color: #fff;
+.nav__mobile-close{
+    width: 28px;
+    height: 28px;
+    color: #666;
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+
+}
+.nav__mobile-close, .nav__bar-btn{
+    cursor: pointer;
+}
+.nav__input:checked ~ .nav__overlay{
+    display: block;
+    
+}
+.nav__input:checked ~ .nav__mobile{
+    animation: slideInLeft ease .3s forwards
+}
+@keyframes slideInLeft {
+    from{
+      opacity: 0;
+      transform: translateX(calc(-100%));
+    }
+    to {
+      opacity: 1;
+      transform: translateX(0);
+    }
+  }
+@keyframes fadeIn {
+    from{
+        opacity: 0;
+    }
+    to{
+        opacity: 1;
+    }
+}
+@media (max-width: 1023px){
+    .nav__bar-btn{
+        display: block;
+        line-height: 46px;
+    }
+    .nav__pc{
+        display: none;
+    }
 }
 #opening{
     margin-top: 46px;
@@ -118,8 +219,6 @@ body{
     padding-top: 64px;
     padding-bottom: 48px;
     min-height: 280px;
-    background-color:  #f5f5f5;
-    
 }
 .about-container{
     background-color: #fff;
@@ -130,12 +229,26 @@ body{
 }
 .about_me-title{
     color: black;
+    font-size: 32px;
+    font-weight: 600;
+    position: relative;
+    padding-left: 20px;
+}
+.about_me-title:before {
+    content: "";
+    position: absolute;
+    height: 3px;
+    background-color: #0078ff;
+    width: 100px;
+    bottom: 0px;
 }
 .about-skill{
     margin-top: 48px;
     padding-left: 40px;
 }
-
+.avatar-img{
+    width: 200px; height:100%; border-radius: 3px
+}
 .avatar-des{
     font-size: 16px;
 }
@@ -144,13 +257,29 @@ p + p{
 }
 .skill{
     margin-top: 64px;
-
+}
+.skill-item{
+    margin-top: 32px;
+}
+.progress-bar{
+    display: flex;
+}
+.completed-bar{
+    background-color: #0078ff;
+    width: 85%;
+    height: 5px;
+    margin-top: 16px;
+}
+.remained-bar{
+    background-color: #a7ccf6;
+    width: 15%;
+    height: 5px;
+    margin-top: 16px;
 }
 .about-me{
-    padding-top: 64px;
     font-size: 20px;
-    padding-bottom: 48px;
-    
+    text-align: justify;
+    padding: 52px 28px 48px 0;
 }
 .content{
     text-indent: 28px;
@@ -158,48 +287,43 @@ p + p{
 }
 
 #services-section{
-    background-color:#f5f5f5;
     min-height: 280px;
 }
-
+/* Experience */
 .experience{
     margin-top: 64px;
+    width: 100%;
+    min-height: 280px;
     position: relative;
-   
 }
-
-.ex-image{
-    background-image: url("./assets/img/theboys.jpg");
+.e-container{
+    background-image: url(../img/theboys.jpg);
     min-height: 280px;
     width: 100%;
 }
 .overlay{
     background-color: #0078ff;
     position: absolute;
+    opacity: 0.7;
     top: 0;
     left: 0;
     bottom: 0;
     right: 0;
-    opacity: 0.7;
 }
-.ex-container{
-    top: 60%;
-    transform: translateY(-50%);
-    position: absolute;
+.e-item{
+    display: flex;
+    justify-content: center;
 
 }
-.experience-items{
-    text-align: center;
-    opacity: 1;
-    min-height: 280px;
-    justify-items: center;
+.e-desc{
     color: #fff;
+    opacity: 1;
 }
 /* Work Section */
 .work-section{
     padding-top: 64px;
+    padding-bottom: 64px;
     min-height: 280px;
-    background-color: #f5f5f5;
 }
 .work-item{
     border-radius: none;
@@ -208,6 +332,12 @@ p + p{
 .work-img{
     width: 100%;
     height: auto;
+    transition: transform .2s;
+}
+.work-img:hover{
+    border-radius: 20px;
+    transform: scale(1.15);
+    cursor: pointer;
 }
 .work-content{
     margin: 16px 0;
@@ -221,4 +351,133 @@ p + p{
     display: flex;
     justify-content:center;
     flex-direction: column;
+}
+.comment{
+    position: relative;
+}
+.comment-container{
+    background-image: url(../img/theboys.jpg);
+    min-height: 60vh;
+    width: 100%;
+}
+
+.comment-people{
+    position: relative;
+    padding-top: 20%;
+    padding-left: 10%;
+    padding-right: 10%;
+    padding-bottom: 10%;
+}
+.checkboxed{
+    position: absolute;
+    z-index: 666;
+    bottom: 10%;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 36px;
+    height: 36px;
+    border-radius: 100%;
+    background-color: #fff;
+}
+.checkboxed:hover{
+    border: 10px solid #fff;
+    background-color: #0078ff;
+    zoom: 1.2;
+    cursor: pointer;
+}
+.p-1{
+    display: none;
+}
+.checkboxed:checked ~ .p-1{
+    display: block;
+}
+.checkboxed:checked ~ .p-2{
+    display: none;
+}
+.c-avatar{
+    margin: auto;
+    border-radius: 100%;
+    width: 150px;
+    height: 150px;
+}
+
+
+@keyframes slideLeft {
+    from{
+      opacity: 0;
+      transform: translate(-250%);
+    }
+    to {
+      opacity: 1;
+      transform: translate(-125%);
+    }
+}
+
+@keyframes slideOutRight {
+    from{
+      opacity: 1;
+      transform: translate(0);
+      display: block;
+    }
+    to {
+      opacity: 0;
+      transform: translate(20%);
+      display: none;
+    }
+}
+#contact-section{
+    position: relative;
+    height: fit-content;
+    padding: 32px 0;
+    margin-top: 64px;
+}
+
+.contact-container {
+    position: relative;
+    width: 90%;
+    top: 15%;
+    bottom: 5%;
+    background-color: #fff;
+    height: fit-content;
+}
+.contact-input{
+    width: 100%;
+    margin-top: 16px;
+    height: 46px;
+}
+.contact-submit{
+    margin-top: -12px;
+}
+.contact-submit, .contact-title{
+    margin: 0 36px;
+}
+.contact-title{
+    position: relative;
+    font-weight: normal;
+    margin-bottom: 40px;
+}
+.contact-title:before{
+    content: "";
+    position: absolute;
+    height: 3px;
+    background-color: #0078ff;
+    width: 100px;
+    bottom: -12px;
+  
+}
+.git-p{
+    font-size: 20px;
+    color: #4E4E4E;
+    font-weight: 300;
+    padding: 0 16px;
+}
+.address{
+    margin-top: 16px;
+    line-height: 2;
+    padding: 0 16px;
+
+}
+.address > ul > li{
+    font-size: 16px;
+    color: #4E4E4E;
 }
