@@ -431,14 +431,16 @@ p + p{
 
 .comment-people{
     position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
+    top: 32px;
+    left: 0;
+    right: 0;
+    animation: slideInLeft ease 0.8s forwards
 }
 .checkboxed{
     position: absolute;
     bottom: 10%;
-    left: 49%;
+    left: 50%;
+    margin-left: 1rem;
     transform: translateX(-50%);
     width: 20px;
     height: 20px;
@@ -448,7 +450,8 @@ p + p{
 .checkboxed2{
     position: absolute;
     bottom: 10%;
-    left: 51%;
+    left: 50%;
+    margin-left: -1rem;
     transform: translateX(-50%);
     width: 20px;
     height: 20px;
