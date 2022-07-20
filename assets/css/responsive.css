@@ -1,11 +1,30 @@
-@media (max-width: 1023px) {
-    .avatar-img{
-        width: 100%;
+@media (min-width: 283px) and (max-width: 739px) {
+    .title {
+        font-size: 3rem;
     }
     .about-skill{
         padding: 0 20px;
     }
     p.content {
         padding: 0 20px;
+    }
+    .e-container{
+        flex-direction: column;
+        align-items: center;
+    }
+}
+
+@media (max-width: 472px) {
+    .content{
+        text-align: center;
+    }
+}
+@media (max-width: 282px){
+    .title {
+        font-size: 2.5rem;
+    }
+    .e-container{
+        flex-direction: column;
+        align-items: center;
     }
 }
